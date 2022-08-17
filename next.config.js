@@ -2,13 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  webpack: function (config, options) {
-    config.experiments = {
-      resolve: {
-        fallback: {
-          util: require.resolve('util/')
-        }
-      }
+  webpack: function (config) {
+    config.resolve.fallback = {
+      util: require.resolve('util/')
     };
     return config;
   }
